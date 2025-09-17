@@ -152,3 +152,110 @@ public class duplicate1 {
 		}
 
 	}
+
+
+updated code
+
+
+Scanner in = new Scanner(System.in);
+		String productCode1 = "11111";
+		String prouctCode2 = "22222";
+		String productCode3 = "33333";
+		String productCode4 = "44444";
+		String productCode5 = "55555";
+		//product names
+		String prodes1 = "Monotior";
+		String prodes2 = "keyboard";
+		String prodes3 = "mouse";
+		String prodes4 = "Mother_board";
+		String prodes5 = "PC_case";
+		//product price
+		int pro1 = 4599;
+		int pro2 = 150;
+		int pro3 = 200;
+		int pro4 = 3450;
+		int pro5 = 2479;
+		
+		System.out.print("code: ");
+		String barCode = in.nextLine();
+		float Qty, subTotal, price = 0, grandtotal, change;
+		switch (barCode) {
+		case "11111":
+			System.out.println(prodes1 +" --- ₱ "+ pro1);
+			price = pro1;break;
+		case "22222":
+			System.out.println(prodes2 +" --- ₱ "+ pro2);
+			price = pro2;break;
+		case "33333":
+			System.out.println(prodes3 +" --- ₱ "+ pro3);
+			price = pro3;break;
+		case "44444":
+			System.out.println(prodes4 +" --- ₱ "+ pro4);
+			price = pro4;break;
+		case "55555":
+			System.out.println(prodes5 +" --- ₱ "+ pro5);
+			price = pro5;break;	
+		default:
+			System.out.println("not");
+			break;
+		}
+		
+		
+		System.out.print("how many: ");
+		Qty = in.nextFloat();
+		subTotal = price * Qty;
+		System.out.println("total: ₱ "+subTotal);
+		
+		//GRANDTOTAL
+		grandtotal = subTotal;
+		System.out.println("Grandtotal: ₱ "+grandtotal);
+		System.out.println();
+	    			
+		
+		int amount = 0;
+		System.out.print("Enter Amount: ₱ ");
+		amount = in.nextInt();
+		
+		change =  amount - grandtotal;
+		if (amount < grandtotal) {
+			System.out.println("Error!");
+			System.out.println("insuficien tamount");
+			System.out.println("Please Try again your payment");
+			System.exit(0);
+		}
+		System.out.println("CHANGE: ₱"+change);		
+		
+	    //CHANGE DENo 
+	    System.out.print(""+ amount);
+		int change1 = 0, t1, b1, fh1, oh1, f1, tw1, te1, F1, s1;
+		change1 = (int) (amount - grandtotal);
+		t1 =  change1 / 1000;
+		b1 = change1 % 1000;
+		fh1 = b1 / 500;
+		b1 %= 500;
+		oh1 = b1 / 100;
+		b1 %= 100;
+		f1 = b1 / 50;
+		b1 %= 50;
+		tw1 = b1 / 20;
+		b1 %= 20;
+		te1 = b1 / 10;
+		b1 %= 10;
+		F1 = b1 / 5;
+		b1 %= 5;
+		s1 = b1 / 1;
+		b1 %= 1;
+		if (change != 0 ) {
+			//System.out.print(" ");
+		if (t1 > 0)  System.out.println("1000\t\t" + t1);
+		if (fh1 > 0) System.out.println("500\t\t" + fh1);
+		if (oh1 > 0) System.out.println("100\t\t" + oh1);
+		if (f1 > 0)  System.out.println("50\t\t" + f1);
+		if (tw1 > 0) System.out.println("20\t\t" + tw1);
+		if (te1 > 0) System.out.println("10\t\t" + te1);
+		if (F1 > 0)	 System.out.println("5\t\t" + F1);
+		if (s1 > 0)  System.out.println("1\t\t" + s1);	
+		}
+
+
+
