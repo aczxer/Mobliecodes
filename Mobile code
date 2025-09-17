@@ -1,0 +1,154 @@
+public class duplicate1 {
+
+	public static void main(String[] args) {
+  Scanner in = new Scanner(System.in);
+	Scanner cs = new Scanner(System.in);
+		
+		// item-price-quantity-subtotal-grandtota-casdenomination-change
+		//int amount = 0, thousand, balance, fivhun, onehun, fifty, twenty, ten, fiv, single;
+		String productCode1 = "11111";
+		String prouctCode2 = "22222";
+		String productCode3 = "33333";
+		String productCode4 = "44444";
+		String productCode5 = "55555";
+		//product names
+		String prodes1 = "Monotior";
+		String prodes2 = "keyboard";
+		String prodes3 = "mouse";
+		String prodes4 = "Mother_board";
+		String prodes5 = "PC_case";
+		//product price
+		int pro1 = 4599;
+		int pro2 = 150;
+		int pro3 = 200;
+		int pro4 = 3450;
+		int pro5 = 2479;
+		
+		System.out.print("code: ");
+		String barCode = in.nextLine();
+		float Qty, subTotal, subTotal1, subTotal2,subTotal3, subTotal4, price = 0, grandtotal, change;
+		switch (barCode) {
+		case "11111":
+			System.out.println(prodes1 +" --- ₱ "+ pro1);
+			price = pro1;break;
+			while(true);
+			     System.out.print("how many: ");
+		       Qty = in.nextFloat();
+		       subTotal = price * Qty;
+		       System.out.println("total: ₱ "+subTotal);
+			
+		case "22222":
+			System.out.println(prodes2 +" --- ₱ "+ pro2);
+			price = pro2;
+			while(true);
+			    System.out.print("how many: ");
+	      	Qty = in.nextFloat();
+	      	subTotal = price * Qty + subTotal;
+		      System.out.println("total: ₱ "+subTotal);
+	    break;
+			
+		case "33333":
+			System.out.println(prodes3 +" --- ₱ "+ pro3);
+			price = pro3;
+			while(true);
+		    	System.out.print("how many: ");
+	      	Qty = in.nextFloat();
+		      subTotal = price * Qty;
+		      System.out.println("total: ₱ "+subTotal);
+		  break;
+			
+		case "44444":
+			System.out.println(prodes4 +" --- ₱ "+ pro4);
+			price = pro4;
+			while(true);
+		    	System.out.print("how many: ");
+		      Qty = in.nextFloat();
+		      subTotal = price * Qty;
+		      System.out.println("total: ₱ "+subTotal);
+			break;
+			
+		case "55555":
+			System.out.println(prodes5 +" --- ₱ "+ pro5);
+			price = pro5;
+			while(true);
+		  	  System.out.print("how many: ");
+		      Qty = in.nextFloat();
+		      subTotal = price * Qty;
+	      	System.out.println("total: ₱ "+subTotal);
+			break;	
+		default:
+			System.out.println("not");
+			i--;
+			continue;
+		}
+		
+		
+		System.out.print("how many: ");
+		Qty = in.nextFloat();
+		subTotal = price * Qty;
+		System.out.println("total: ₱ "+subTotal);
+		
+		
+		
+		// sub = PRICE * QUANTITY
+		subtotal3 = price3 * qty3;
+		System.out.println("SUBTOTAL: ₱"+subtotal3);		
+		System.out.println();
+		
+		// GRANDTOTAL = subtotal1 + subtota2 1+ subtotal3
+		grandtotal = subtotal1 + subtotal2 + subtotal3;
+		System.out.println("Grandtotal: ₱"+grandtotal);
+		System.out.println();
+		
+		
+		float amount = 0,
+		change =  amount - grandtotal;
+		
+		System.out.print("Enter Amount: ");
+		amount = in.nextInt();
+		int change = amount - grandtotal;
+	//	change =  amount - grandtotal;
+		Displaycashdenomination(change);
+		if (amount < grandtotal) {
+			System.out.println("Error!");
+			System.out.println("insuficien tamount");
+			System.out.println("Please Try again your payment");
+			System.exit(0);
+		}
+		System.out.println("YOUR CHANGE");
+		System.out.println("CHANGE: ₱"+change);
+		
+		
+		static void Displaycashdenomination( int amount)
+		{
+		int thousand, balance, fivhun, onehun, fifty, twenty, ten, fiv, single;
+		thousand = amount / 1000;
+		balance = amount % 1000;
+		fivhun = balance / 500;
+		balance %= 500;
+		onehun = balance / 100;
+		balance %= 100;
+		fifty = balance / 50;
+		balance %= 50;
+		twenty = balance / 20;
+		balance %= 20;
+		ten = balance / 10;
+		balance %= 10;
+		fiv = balance / 5;
+		balance %= 5;
+		single = balance / 1;
+		balance %= 1;
+				
+		System.out.println("CASH\t\tno.pcs of cash");
+			if (thousand > 0) System.out.println("1000\t\t" +thousand);
+			if (fivhun > 0) 	System.out.println("500\t\t" +fivhun);
+			if (onehun > 0)   System.out.println("100\t\t" +onehun);
+			if (fifty > 0)		System.out.println("50\t\t" +fifty);
+			if (twenty > 0)		System.out.println("20\t\t" +twenty);
+			if (ten > 0)		  System.out.println("10\t\t" +ten);
+			if (fiv > 0)		  System.out.println("5\t\t" +fiv);
+			if (single > 0)		System.out.println("1\t\t" +single);
+		//System.out.println("Remaining balance: "+balance);
+		}
+
+	}
